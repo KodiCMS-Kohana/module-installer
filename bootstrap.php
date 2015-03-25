@@ -11,6 +11,7 @@ if (!defined('ADMIN_DIR_NAME')) define('ADMIN_DIR_NAME', '');
 if (!defined('PUBLIC_URL'))		define('PUBLIC_URL', BASE_URL . 'public/');
 if (!defined('PLUGINS_URL'))	define('PLUGINS_URL', BASE_URL . 'cms/plugins/');
 if (!defined('IS_BACKEND'))		define('IS_BACKEND', FALSE);
+if (!defined('URL_SUFFIX'))		define('URL_SUFFIX', FALSE);
 
 /**
  * Set the default cookie salt
@@ -29,7 +30,6 @@ Kohana::modules( array(
 	'api'			=> CMS_MODPATH . 'api',
 	'users'			=> CMS_MODPATH . 'users',
 	'core'			=> CMS_MODPATH . 'core',		// Core
-	'assets'		=> CMS_MODPATH . 'assets',		// Asset Manager
 	'cache'			=> MODPATH . 'cache',		// Cache manager
 	'database'		=> MODPATH . 'database',	// Database access
 	'auth'			=> MODPATH . 'auth',		// Basic authentication

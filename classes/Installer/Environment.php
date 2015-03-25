@@ -119,11 +119,11 @@ class Installer_Environment {
 	{
 		return array(
 			'title' => __('Cache Directory'),
-			'condition' => (is_dir(CMSPATH) AND is_dir(CMSPATH . 'cache') AND is_writable(CMSPATH . 'cache')),
+			'condition' => (is_dir(CMSPATH) AND is_dir(STORAGEPATH . 'cache') AND is_writable(STORAGEPATH . 'cache')),
 			'error' => __('The :dir directory is not writable.', array(
-				':dir' => '<code>' . CMSPATH . 'cache/</code>'
+				':dir' => '<code>' . STORAGEPATH . 'cache/</code>'
 			)),
-			'success' => CMSPATH . 'cache/'
+			'success' => STORAGEPATH . 'cache/'
 		);
 	}
 
@@ -131,11 +131,11 @@ class Installer_Environment {
 	{
 		return array(
 			'title' => __('Logs Directory'),
-			'condition' => (is_dir(CMSPATH) AND is_dir(CMSPATH . 'logs') AND is_writable(CMSPATH . 'logs')),
+			'condition' => (is_dir(CMSPATH) AND is_dir(STORAGEPATH . 'logs') AND is_writable(STORAGEPATH . 'logs')),
 			'error' => __('The :dir directory is not writable.', array(
-				':dir' => '<code>' . CMSPATH . 'logs/</code>'
+				':dir' => '<code>' . STORAGEPATH . 'logs/</code>'
 			)),
-			'success' => CMSPATH . 'logs/'
+			'success' => STORAGEPATH . 'logs/'
 		);
 	}
 
