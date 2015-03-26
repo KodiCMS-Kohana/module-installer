@@ -141,22 +141,22 @@ class Installer_Environment {
 
 	public function test_config_placement()
 	{
-		$condition = (is_dir(pathinfo(CFGFATH, PATHINFO_DIRNAME) . DIRECTORY_SEPARATOR) AND ! is_file(CFGFATH) AND is_writable(pathinfo(CFGFATH, PATHINFO_DIRNAME)));
+		$condition = (is_dir(pathinfo(CONFIG_FILE, PATHINFO_DIRNAME) . DIRECTORY_SEPARATOR) AND ! is_file(CONFIG_FILE) AND is_writable(pathinfo(CONFIG_FILE, PATHINFO_DIRNAME)));
 
 		$error = NULL;
 		if (!$condition)
 		{
-			if (!is_writable(pathinfo(CFGFATH, PATHINFO_DIRNAME)))
+			if (!is_writable(pathinfo(CONFIG_FILE, PATHINFO_DIRNAME)))
 			{
 				$error = __('The config :dir directory must be writable or empty config file :file created with write access', array(
-					':dir' => pathinfo(CFGFATH, PATHINFO_DIRNAME),
-					':file' => pathinfo(CFGFATH, PATHINFO_FILENAME)
+					':dir' => pathinfo(CONFIG_FILE, PATHINFO_DIRNAME),
+					':file' => pathinfo(CONFIG_FILE, PATHINFO_FILENAME)
 				));
 			}
 			else
 			{
 				$error = __('The config :dir directory does not exist.', array(
-					':dir' => CFGFATH, ':file' => pathinfo(CFGFATH, PATHINFO_FILENAME) . '.' . pathinfo(CFGFATH, PATHINFO_EXTENSION)
+					':dir' => CONFIG_FILE, ':file' => pathinfo(CONFIG_FILE, PATHINFO_FILENAME) . '.' . pathinfo(CONFIG_FILE, PATHINFO_EXTENSION)
 				));
 			}
 		}
@@ -164,7 +164,7 @@ class Installer_Environment {
 			'title' => __('Config file placement'),
 			'condition' => $condition,
 			'error' => $error,
-			'success' => CFGFATH,
+			'success' => CONFIG_FILE,
 			'notice' => array(
 				'class' => 'alert alert-warning',
 				'message' => __('To change config file placement edit index.php file')

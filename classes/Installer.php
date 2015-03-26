@@ -571,7 +571,7 @@ class Installer {
 				->execute($this->_db_instance);
 		}
 
-		if (file_exists(CFGFATH) !== FALSE)
+		if (file_exists(CONFIG_FILE) !== FALSE)
 		{
 			$this->_write_config_to_file('');
 		}
@@ -587,7 +587,7 @@ class Installer {
 	 */
 	protected function _write_config_to_file($content)
 	{
-		if (!file_put_contents(CFGFATH, $content) !== FALSE)
+		if (!file_put_contents(CONFIG_FILE, $content) !== FALSE)
 		{
 			throw new Installer_Exception('Can\'t write config.php file!');
 		}
