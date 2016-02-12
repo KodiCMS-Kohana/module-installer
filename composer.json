@@ -1,5 +1,5 @@
 {
-	"name":        "kodicms/installer",
+	"name":        "kodicms_kohana/installer",
 	"type":        "kodicms-module",
 	"description": "The official KodiCMS installer module",
 	"homepage":    "http://www.kodicms.ru/",
